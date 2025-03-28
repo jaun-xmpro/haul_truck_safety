@@ -5,10 +5,12 @@ class HaulTruckSafetyChecker:
     def __init__(self, config_path=None):
         """Initialize with truck specs from a JSON file."""
         
-        self.truck_specs = None
+        if config_path is None:
+            self.truck_specs = None
 
-        if isinstance(config_path, dict):
+        elif isinstance(config_path, dict):
             self.truck_specs = config_path
+
         else:
             with open(config_path, 'r') as f:
                 self.truck_specs = json.load(f)
