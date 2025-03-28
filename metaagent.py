@@ -32,6 +32,8 @@ def on_receive(data: dict) -> dict:
     Returns:
         dict: Safety check result (e.g., {"status": "safe", "details": {...}} or {"error": "message"})
     """
+    print("!on_receive")
+    print(data)
     global safety_checker
     if safety_checker is None:
         return {"error": "Monitor not initialized"}
