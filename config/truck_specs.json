@@ -1,0 +1,7 @@
+{
+    "max_load": 100.0,
+    "h_empty": 1.5,
+    "h_full": 2.5,
+    "base_lateral": 3.0,
+    "base_longitudinal": 5.0
+}
