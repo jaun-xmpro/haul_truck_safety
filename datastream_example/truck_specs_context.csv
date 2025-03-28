@@ -1,4 +1,4 @@
-id,truck_id,snapshot
+id,truck_id,truck_specs
 1,HT-M1-001,"{\"load_weight\": 50.0, \"angle_longitudinal\": 10.0, \"angle_lateral\": 20.0}"
 2,HT-M1-001,"{\"load_weight\": 110.0, \"angle_longitudinal\": 5.0, \"angle_lateral\": 15.0}"
 3,HT-M1-002,"{\"load_weight\": 120.0, \"angle_longitudinal\": 25.0, \"angle_lateral\": 10.0}"
