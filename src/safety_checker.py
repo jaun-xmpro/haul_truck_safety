@@ -2,8 +2,10 @@ import json
 from src.physics import calculate_cog_height, calculate_max_safe_angle
 
 class HaulTruckSafetyChecker:
-    def __init__(self, config_path):
+    def __init__(self, config_path=None):
         """Initialize with truck specs from a JSON file."""
+        
+        self.truck_specs = None
 
         if isinstance(config_path, dict):
             self.truck_specs = config_path
@@ -11,9 +13,15 @@ class HaulTruckSafetyChecker:
             with open(config_path, 'r') as f:
                 self.truck_specs = json.load(f)
 
-    def check_safety(self, load_weight, angle_longitudinal, angle_lateral):
+    def check_safety(self, load_weight, angle_longitudinal, angle_lateral, truck_specs=None):
         """Check if the truck is safe given load and angles."""
-        specs = self.truck_specs
+
+        if truck_specs:
+            specs = truck_specs
+            if isinstance(truck_specs, str):
+                specs = json.loads(truck_specs)
+        else:
+            specs = self.truck_specs
 
         # Check if load exceeds maximum capacity
         if load_weight > specs["max_load"]:

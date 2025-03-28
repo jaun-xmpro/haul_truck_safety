@@ -39,7 +39,8 @@ def on_receive(data: dict) -> dict:
         result = safety_checker.check_safety(
             data["load_weight"],
             data["angle_longitudinal"],
-            data["angle_lateral"]
+            data["angle_lateral"],
+            data.get("truck_specs", None)
         )
         return result
     except Exception as e:
