@@ -17,7 +17,7 @@ def on_create(data: dict) -> dict:
     """
     global safety_checker
     try:
-        safety_checker = HaulTruckSafetyChecker(data)
+        safety_checker = HaulTruckSafetyChecker()
         return {"status": "initialized"}
     except Exception as e:
         return {"error": str(e)}
