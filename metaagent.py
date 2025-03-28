@@ -42,7 +42,8 @@ def on_receive(data: dict) -> dict:
             data["angle_lateral"],
             data.get("truck_specs", None)
         )
-        return result
+        print(result)
+        return {"result": result}
     except Exception as e:
         return {"error": str(e)}
 
