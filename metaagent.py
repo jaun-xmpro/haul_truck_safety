@@ -36,8 +36,10 @@ def on_receive(data: dict) -> dict:
     print(data)
     global safety_checker
     if safety_checker is None:
+        print("!on_receive: safety_checker is None")
         return {"error": "Monitor not initialized"}
     try:
+        print({"load_weight": data["spec_load_weight"], "angle_longitudinal": data["spec_angle_longitudinal"], "angle_lateral": data["spec_angle_lateral"]})
         result = safety_checker.check_safety(
             data["load_weight"],
             data["angle_longitudinal"],
