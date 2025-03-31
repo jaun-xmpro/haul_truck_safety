@@ -32,11 +32,9 @@ def on_receive(data: dict) -> dict:
     Returns:
         dict: Safety check result (e.g., {"status": "safe", "details": {...}} or {"error": "message"})
     """
-    print("!on_receive")
-    print(data)
+
     global safety_checker
     if safety_checker is None:
-        print("!on_receive: safety_checker is None")
         return {"error": "Monitor not initialized"}
     try:
 
@@ -53,10 +51,8 @@ def on_receive(data: dict) -> dict:
             "base_lateral": data["spec_base_lateral"],
             "base_longitudinal": data["spec_base_longitudinal"]}
         )
-        print(result)
-        return {"result": result}
+        return {"result": json.dumps(result)}
     except Exception as e:
-        print(f"Error: {str(e)}")
         return {"error": str(e)}
 
 def on_destroy() -> dict:
