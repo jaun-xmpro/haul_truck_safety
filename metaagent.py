@@ -48,6 +48,7 @@ def on_receive(data: dict) -> dict:
         print(result)
         return {"result": result}
     except Exception as e:
+        print(f"Error: {str(e)}")
         return {"error": str(e)}
 
 def on_destroy() -> dict:
