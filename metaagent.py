@@ -42,7 +42,8 @@ def on_receive(data: dict) -> dict:
             data["load_weight"],
             data["angle_longitudinal"],
             data["angle_lateral"],
-            data.get("truck_specs", None)
+            #data.get("truck_specs", None)
+            {"load_weight": data["spec_load_weight"], "spec_angle_longitudinal": data["spec_angle_longitudinal"], "angle_lateral": data["spec_angle_lateral"]}
         )
         print(result)
         return {"result": result}
