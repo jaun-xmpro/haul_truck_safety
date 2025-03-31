@@ -1,7 +1,7 @@
-id,truck_id,spec_load_weight,spec_angle_longitudinal,spec_angle_lateral
-1,HT-M1-001,50.0,10.0,20.0
-2,HT-M1-001,110.0,5.0,15.0
-3,HT-M1-002,120.0,25.0,10.0
-4,HT-M1-002,75.0,8.0,30.0
-5,HT-M2-001,60.0,15.0,5.0
-6,HT-M2-002,90.0,20.0,25.0
+id,truck_id,spec_load_weight,spec_angle_longitudinal,spec_angle_lateral,spec_max_load,spec_h_empty,spec_h_full,spec_base_lateral,spec_base_longitudinal
+1,HT-M1-001,50.0,10.0,20.0,150.0,1.0,2.0,1.5,2.0
+2,HT-M1-001,110.0,5.0,15.0,150.0,1.0,2.0,1.5,2.0
+3,HT-M1-002,120.0,25.0,10.0,200.0,1.2,2.5,1.8,2.2
+4,HT-M1-002,75.0,8.0,30.0,200.0,1.2,2.5,1.8,2.2
+5,HT-M2-001,60.0,15.0,5.0,180.0,1.1,2.3,1.6,2.1
+6,HT-M2-002,90.0,20.0,25.0,220.0,1.3,2.7,1.9,2.3
